@@ -81,7 +81,7 @@ function renderClips(clips) {
     const fig = el("figure", "clip");
     fig.append(el("div", "clip-placeholder", "Clip forthcoming (pending peer review)"));
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", "Fig. 3. "), document.createTextNode("Footage of the author being funny."));
+    cap.append(el("span", "fig-num", "Fig. 2. "), document.createTextNode("Footage of the author being funny."));
     fig.append(cap);
     list.append(fig);
     return;
@@ -102,7 +102,7 @@ function renderClips(clips) {
     frame.append(iframe);
 
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", `Fig. ${i + 3}. `), document.createTextNode(clip.title || ""));
+    cap.append(el("span", "fig-num", `Fig. ${i + 2}. `), document.createTextNode(clip.title || ""));
 
     fig.append(frame, cap);
     list.append(fig);
@@ -180,7 +180,7 @@ function renderPhotos(photos) {
     link.append(img);
 
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", `Plate ${i + 1}. `), document.createTextNode(photo.caption || ""));
+    cap.append(el("span", "fig-num", `Plate ${i + 2}. `), document.createTextNode(photo.caption || ""));
 
     fig.append(link, cap);
     list.append(fig);

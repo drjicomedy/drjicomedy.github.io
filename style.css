@@ -199,28 +199,27 @@ figcaption, .fig-caption {
 
 .fig-num { font-weight: 600; color: var(--text); }
 
-/* ---------- Hero photo ---------- */
-.hero-photo { margin: 0; }
-.hero-photo img {
+/* ---------- Abstract ---------- */
+.abstract-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 17rem) minmax(0, 44rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.headshot { margin: 0; }
+.headshot img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 2px solid var(--text);
-  box-shadow: 8px 8px 0 var(--neon), 0 0 60px rgba(57, 66, 216, 0.55);
+  box-shadow: 6px 6px 0 var(--neon);
 }
-.hero-photo .photo-placeholder { display: none; aspect-ratio: 1 / 1; }
-.hero-photo.missing .photo-placeholder { display: grid; }
-.hero-photo figcaption { text-align: left; margin-top: 0.85rem; }
-
-/* ---------- Abstract ---------- */
-.abstract-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 40rem) minmax(0, 20rem);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: center;
-}
+.headshot .photo-placeholder { display: none; aspect-ratio: 1 / 1; }
+.headshot.missing .photo-placeholder { display: grid; }
+.headshot figcaption { text-align: left; margin-top: 0.85rem; }
 
 .abstract {
   padding: clamp(1.25rem, 3vw, 2rem);
@@ -392,8 +391,8 @@ figcaption, .fig-caption {
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; }
   .abstract-wrap { grid-template-columns: 1fr; }
-  .hero-photo { max-width: 30rem; }
-  .venn { max-width: 22rem; margin: 0 auto; width: 100%; }
+  .headshot { max-width: 17rem; }
+  .venn { max-width: 24rem; margin: 0 auto; width: 100%; }
 }
 
 @media (max-width: 560px) {

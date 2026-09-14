@@ -46,13 +46,23 @@
         </div>
       </div>
 
-      <!-- Main photo: images/hero.jpg (square) -->
-      <figure class="hero-photo">
-        <img src="images/hero.jpg" alt="Dr. Ji performing stand-up with a microphone in front of a blue brick wall and a neon sign"
-             width="1200" height="1200"
-             onerror="this.parentElement.classList.add('missing'); this.remove();">
-        <div class="photo-placeholder">images/hero.jpg</div>
-        <figcaption><span class="fig-num">Fig. 1.</span> Field work.</figcaption>
+      <figure class="venn">
+        <svg viewBox="0 0 400 300" role="img" aria-labelledby="venn-title">
+          <title id="venn-title">Venn diagram: Dr. Ji sits where lectures overlap with stand-up sets</title>
+          <defs>
+            <clipPath id="clip-left"><circle cx="150" cy="140" r="110"/></clipPath>
+          </defs>
+          <circle cx="150" cy="140" r="110" fill="var(--teal)" fill-opacity="0.10"/>
+          <circle cx="250" cy="140" r="110" fill="var(--neon)" fill-opacity="0.10"/>
+          <circle cx="250" cy="140" r="110" fill="var(--brick)" clip-path="url(#clip-left)"/>
+          <circle cx="150" cy="140" r="110" fill="none" stroke="var(--teal)" stroke-width="3"/>
+          <circle cx="250" cy="140" r="110" fill="none" stroke="var(--neon)" stroke-width="3"/>
+          <text x="95" y="146" class="venn-label" text-anchor="middle">Lecture</text>
+          <text x="305" y="135" class="venn-label venn-label-neon" text-anchor="middle">Stand-up</text>
+          <text x="305" y="158" class="venn-label venn-label-neon" text-anchor="middle">set</text>
+          <text x="200" y="148" class="venn-me" text-anchor="middle">me</text>
+        </svg>
+        <figcaption><span class="fig-num">Fig. 1.</span> Where I work.</figcaption>
       </figure>
     </section>
 
@@ -60,38 +70,27 @@
     <section id="abstract" class="section">
       <h2><span class="sec-num">1.</span> Abstract</h2>
       <div class="abstract-wrap">
-        <div class="abstract">
-          <p>
-            My comedy tries to solve real problems in the world, from incoherent housing policy,
-            AI existentialism, and mass shootings to raising number sense in our nation’s young
-            children. I sneak jokes into dense academic journal articles and knowledge into open mics.
-            I have even pitched my out-of-pocket solutions to Bill Gates (and gotten a $3.5 million
-            grant afterwards).
-          </p>
-          <p class="keywords">
-            <strong>Keywords:</strong> stand-up, lectures, housing policy, AI existentialism,
-            number sense, emceeing, science communication
-          </p>
-        </div>
-
-        <figure class="venn">
-          <svg viewBox="0 20 400 250" role="img" aria-labelledby="venn-title">
-            <title id="venn-title">Venn diagram: Dr. Ji sits where lectures overlap with stand-up sets</title>
-            <defs>
-              <clipPath id="clip-left"><circle cx="150" cy="140" r="110"/></clipPath>
-            </defs>
-            <circle cx="150" cy="140" r="110" fill="var(--teal)" fill-opacity="0.10"/>
-            <circle cx="250" cy="140" r="110" fill="var(--neon)" fill-opacity="0.10"/>
-            <circle cx="250" cy="140" r="110" fill="var(--brick)" clip-path="url(#clip-left)"/>
-            <circle cx="150" cy="140" r="110" fill="none" stroke="var(--teal)" stroke-width="3"/>
-            <circle cx="250" cy="140" r="110" fill="none" stroke="var(--neon)" stroke-width="3"/>
-            <text x="95" y="146" class="venn-label" text-anchor="middle">Lecture</text>
-            <text x="305" y="135" class="venn-label venn-label-neon" text-anchor="middle">Stand-up</text>
-            <text x="305" y="158" class="venn-label venn-label-neon" text-anchor="middle">set</text>
-            <text x="200" y="148" class="venn-me" text-anchor="middle">me</text>
-          </svg>
-          <figcaption><span class="fig-num">Fig. 2.</span> Where I work.</figcaption>
-        </figure>
+      <!-- Your photo: images/headshot.jpg -->
+      <figure class="headshot">
+        <img src="images/headshot.jpg" alt="Dr. Ji performing stand-up with a microphone in front of a blue brick wall and a neon sign"
+             width="1200" height="1200"
+             onerror="this.parentElement.classList.add('missing'); this.remove();">
+        <div class="photo-placeholder">images/headshot.jpg</div>
+        <figcaption><span class="fig-num">Plate 1.</span> The author.</figcaption>
+      </figure>
+      <div class="abstract">
+        <p>
+          My comedy tries to solve real problems in the world, from incoherent housing policy,
+          AI existentialism, and mass shootings to raising number sense in our nation’s young
+          children. I sneak jokes into dense academic journal articles and knowledge into open mics.
+          I have even pitched my out-of-pocket solutions to Bill Gates (and gotten a $3.5 million
+          grant afterwards).
+        </p>
+        <p class="keywords">
+          <strong>Keywords:</strong> stand-up, lectures, housing policy, AI existentialism,
+          number sense, emceeing, science communication
+        </p>
+      </div>
       </div>
     </section>
 

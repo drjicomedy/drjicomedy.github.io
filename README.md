@@ -52,11 +52,11 @@ All images go in the `images/` folder. Use lowercase names with hyphens and no s
 
 | File | Where it shows up | Shape / size |
 | --- | --- | --- |
-| `hero.jpg` | Big photo at the top | Square, 1200×1200 |
+| `headshot.jpg` | Next to the bio | Square, 1200×1200 |
 | `share.jpg` | Preview image when the link is texted or posted | Landscape, exactly 1200×630 |
 | `stanford-hai.jpg`, `nctm.jpg`, … | Photo gallery ("Plates") | Any; cropped to 4:3 |
 
-`hero.jpg` and `share.jpg` are used automatically. Gallery photos also need to be listed in `content.json`:
+`headshot.jpg` and `share.jpg` are used automatically. Gallery photos also need to be listed in `content.json`:
 
 ```json
 "photos": [
