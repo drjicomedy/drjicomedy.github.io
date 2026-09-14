@@ -1,14 +1,13 @@
 :root {
-  /* Palette pulled from the Astronaut City photo:
-     blue-lit brick, neon magenta sign, teal dress */
-  --bg: #0d0e2e;
-  --surface: #171a4d;
-  --text: #f2f1ff;
-  --text-soft: #a9acdb;
-  --rule: #282c6e;
-  --teal: #2fd4c4;
-  --neon: #ef5bff;
-  --brick: #3942d8;
+  /* Stage-light palette: deep purple room, teal + violet lights */
+  --bg: #1a1230;
+  --surface: #251a45;
+  --text: #f4effc;
+  --text-soft: #b8acd6;
+  --rule: #3b2e66;
+  --teal: #3ddbc9;
+  --violet: #b075ff;
+  --mark: #6a36c9;
 
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --display: "Archivo Black", "Arial Black", Impact, sans-serif;
@@ -35,7 +34,7 @@ body {
 a { color: inherit; }
 
 mark {
-  background: linear-gradient(transparent 12%, var(--brick) 12%, var(--brick) 88%, transparent 88%);
+  background: linear-gradient(transparent 12%, var(--mark) 12%, var(--mark) 88%, transparent 88%);
   color: inherit;
   padding: 0 0.15em;
   -webkit-box-decoration-break: clone;
@@ -128,11 +127,6 @@ h1 {
   line-height: 0.9;
   letter-spacing: -0.02em;
   margin: 0 0 1.25rem;
-  color: #fff4ff;
-  text-shadow:
-    0 0 6px rgba(239, 91, 255, 0.7),
-    0 0 22px rgba(239, 91, 255, 0.45),
-    0 0 48px rgba(239, 91, 255, 0.25);
 }
 
 .tagline {
@@ -162,12 +156,12 @@ h1 {
   padding: 0.8rem 1.2rem;
   border: 2px solid var(--text);
   background: var(--bg);
-  box-shadow: 4px 4px 0 var(--neon);
+  box-shadow: 4px 4px 0 var(--violet);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--neon); }
-.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--neon); }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--violet); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--violet); }
 
 .btn-primary { background: var(--teal); border-color: var(--teal); color: var(--bg); }
 .btn-big { font-size: 1rem; padding: 1rem 1.6rem; }
@@ -182,7 +176,7 @@ h1 {
   font-weight: 500;
   fill: var(--teal);
 }
-.venn-label-neon { fill: var(--neon); }
+.venn-label-violet { fill: var(--violet); }
 
 .venn-me {
   font-family: var(--display);
@@ -215,7 +209,7 @@ figcaption, .fig-caption {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 2px solid var(--text);
-  box-shadow: 6px 6px 0 var(--neon);
+  box-shadow: 6px 6px 0 var(--violet);
 }
 .headshot .photo-placeholder { display: none; aspect-ratio: 1 / 1; }
 .headshot.missing .photo-placeholder { display: grid; }
@@ -270,7 +264,7 @@ figcaption, .fig-caption {
 .show-meta { margin: 0.15rem 0 0; color: var(--text-soft); font-size: 0.95rem; }
 .show-note { margin: 0.25rem 0 0; font-style: italic; font-size: 0.95rem; }
 
-.show .btn { font-size: 0.8rem; padding: 0.55rem 0.9rem; box-shadow: 3px 3px 0 var(--neon); }
+.show .btn { font-size: 0.8rem; padding: 0.55rem 0.9rem; box-shadow: 3px 3px 0 var(--violet); }
 
 .empty {
   padding: 1.5rem 0;
@@ -319,7 +313,7 @@ figcaption, .fig-caption {
   max-width: 100%;
   border: 2px solid var(--text);
   background: #000;
-  box-shadow: 6px 6px 0 var(--neon);
+  box-shadow: 6px 6px 0 var(--violet);
 }
 .clip-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
@@ -356,7 +350,7 @@ figcaption, .fig-caption {
   background: var(--surface);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.photo a:hover img { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--neon); }
+.photo a:hover img { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--violet); }
 .photo .photo-placeholder { aspect-ratio: 4 / 3; }
 .photo figcaption { text-align: left; margin-top: 0.6rem; }
 
