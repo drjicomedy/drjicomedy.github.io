@@ -11,7 +11,7 @@
   <!-- Link preview image (texts, Instagram DMs, Slack): images/share.jpg, 1200×630 -->
   <meta property="og:image" content="https://drjicomedy.github.io/images/share.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='38' cy='50' r='30' fill='none' stroke='%233ddbc9' stroke-width='7'/><circle cx='62' cy='50' r='30' fill='none' stroke='%23b075ff' stroke-width='7'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='38' cy='50' r='30' fill='none' stroke='%232fd4c4' stroke-width='7'/><circle cx='62' cy='50' r='30' fill='none' stroke='%23ef5bff' stroke-width='7'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
     <nav>
       <a href="#abstract">Abstract</a>
       <a href="#shows">Shows</a>
+      <a href="#writing">Writing</a>
       <a href="#clips">Clips</a>
       <a href="#photos">Photos</a>
       <a href="#contact">Book</a>
@@ -45,23 +46,13 @@
         </div>
       </div>
 
-      <figure class="venn">
-        <svg viewBox="0 0 400 300" role="img" aria-labelledby="venn-title">
-          <title id="venn-title">Venn diagram: Dr. Ji sits where funny lectures overlap with stand-up comedy</title>
-          <defs>
-            <clipPath id="clip-left"><circle cx="150" cy="140" r="110"/></clipPath>
-          </defs>
-          <circle cx="150" cy="140" r="110" fill="var(--teal)" fill-opacity="0.10"/>
-          <circle cx="250" cy="140" r="110" fill="var(--violet)" fill-opacity="0.10"/>
-          <circle cx="250" cy="140" r="110" fill="var(--mark)" clip-path="url(#clip-left)"/>
-          <circle cx="150" cy="140" r="110" fill="none" stroke="var(--teal)" stroke-width="3"/>
-          <circle cx="250" cy="140" r="110" fill="none" stroke="var(--violet)" stroke-width="3"/>
-          <text x="95" y="146" class="venn-label" text-anchor="middle">Lecture</text>
-          <text x="305" y="135" class="venn-label venn-label-violet" text-anchor="middle">Stand-up</text>
-          <text x="305" y="158" class="venn-label venn-label-violet" text-anchor="middle">set</text>
-          <text x="200" y="148" class="venn-me" text-anchor="middle">me</text>
-        </svg>
-        <figcaption><span class="fig-num">Fig. 1.</span> Where I work.</figcaption>
+      <!-- Main photo: images/hero.jpg (square) -->
+      <figure class="hero-photo">
+        <img src="images/hero.jpg" alt="Dr. Ji performing stand-up with a microphone in front of a blue brick wall and a neon sign"
+             width="1200" height="1200"
+             onerror="this.parentElement.classList.add('missing'); this.remove();">
+        <div class="photo-placeholder">images/hero.jpg</div>
+        <figcaption><span class="fig-num">Fig. 1.</span> Field work.</figcaption>
       </figure>
     </section>
 
@@ -69,26 +60,38 @@
     <section id="abstract" class="section">
       <h2><span class="sec-num">1.</span> Abstract</h2>
       <div class="abstract-wrap">
-      <!-- Put your headshot at images/headshot.jpg -->
-      <figure class="headshot">
-        <img src="images/headshot.jpg" alt="Dr. Ji" width="600" height="750"
-             onerror="this.parentElement.classList.add('missing'); this.remove();">
-        <div class="photo-placeholder">images/headshot.jpg</div>
-        <figcaption><span class="fig-num">Plate 1.</span> The author.</figcaption>
-      </figure>
-      <div class="abstract">
-        <p>
-          My comedy tries to solve real problems in the world, from incoherent housing policy,
-          AI existentialism, and mass shootings to raising number sense in our nation’s young
-          children. I sneak jokes into dense academic journal articles and knowledge into open mics.
-          I have even pitched my out-of-pocket solutions to Bill Gates (and gotten a $3.5 million
-          grant afterwards).
-        </p>
-        <p class="keywords">
-          <strong>Keywords:</strong> stand-up, lectures, housing policy, AI existentialism,
-          number sense, emceeing, science communication
-        </p>
-      </div>
+        <div class="abstract">
+          <p>
+            My comedy tries to solve real problems in the world, from incoherent housing policy,
+            AI existentialism, and mass shootings to raising number sense in our nation’s young
+            children. I sneak jokes into dense academic journal articles and knowledge into open mics.
+            I have even pitched my out-of-pocket solutions to Bill Gates (and gotten a $3.5 million
+            grant afterwards).
+          </p>
+          <p class="keywords">
+            <strong>Keywords:</strong> stand-up, lectures, housing policy, AI existentialism,
+            number sense, emceeing, science communication
+          </p>
+        </div>
+
+        <figure class="venn">
+          <svg viewBox="0 20 400 250" role="img" aria-labelledby="venn-title">
+            <title id="venn-title">Venn diagram: Dr. Ji sits where lectures overlap with stand-up sets</title>
+            <defs>
+              <clipPath id="clip-left"><circle cx="150" cy="140" r="110"/></clipPath>
+            </defs>
+            <circle cx="150" cy="140" r="110" fill="var(--teal)" fill-opacity="0.10"/>
+            <circle cx="250" cy="140" r="110" fill="var(--neon)" fill-opacity="0.10"/>
+            <circle cx="250" cy="140" r="110" fill="var(--brick)" clip-path="url(#clip-left)"/>
+            <circle cx="150" cy="140" r="110" fill="none" stroke="var(--teal)" stroke-width="3"/>
+            <circle cx="250" cy="140" r="110" fill="none" stroke="var(--neon)" stroke-width="3"/>
+            <text x="95" y="146" class="venn-label" text-anchor="middle">Lecture</text>
+            <text x="305" y="135" class="venn-label venn-label-neon" text-anchor="middle">Stand-up</text>
+            <text x="305" y="158" class="venn-label venn-label-neon" text-anchor="middle">set</text>
+            <text x="200" y="148" class="venn-me" text-anchor="middle">me</text>
+          </svg>
+          <figcaption><span class="fig-num">Fig. 2.</span> Where I work.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -101,23 +104,31 @@
       </div>
     </section>
 
+    <!-- ============ WRITING ============ -->
+    <!-- Humor writing is listed in content.json under "writing". -->
+    <section id="writing" class="section">
+      <h2><span class="sec-num">3.</span> Publications</h2>
+      <p class="section-note">Humor writing. Peer review was mostly people laughing.</p>
+      <ol id="writing-list" class="references"></ol>
+    </section>
+
     <!-- ============ CLIPS ============ -->
     <!-- Clips are listed in content.json under "clips". -->
     <section id="clips" class="section">
-      <h2><span class="sec-num">3.</span> Supplementary Materials</h2>
+      <h2><span class="sec-num">4.</span> Supplementary Materials</h2>
       <div id="clip-list" class="clip-list"></div>
     </section>
 
     <!-- ============ PHOTOS ============ -->
     <!-- Photos go in the images/ folder and are listed in content.json under "photos". -->
     <section id="photos" class="section">
-      <h2><span class="sec-num">4.</span> Plates</h2>
+      <h2><span class="sec-num">5.</span> Plates</h2>
       <div id="photo-list" class="photo-list"></div>
     </section>
 
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="section contact">
-      <h2><span class="sec-num">5.</span> Correspondence</h2>
+      <h2><span class="sec-num">6.</span> Correspondence</h2>
       <p class="contact-lede">
         Available for comedy shows, emceeing, conference keynotes, and any event that could use
         a lecture with a two-drink minimum.

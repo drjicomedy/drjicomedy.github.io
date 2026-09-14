@@ -1,4 +1,4 @@
-// Renders shows, clips, and photos from content.json.
+// Renders shows, writing, clips, and photos from content.json.
 // Shows whose date has passed are hidden automatically, so you never have to delete old ones.
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -81,7 +81,7 @@ function renderClips(clips) {
     const fig = el("figure", "clip");
     fig.append(el("div", "clip-placeholder", "Clip forthcoming (pending peer review)"));
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", "Fig. 2. "), document.createTextNode("Footage of the author being funny."));
+    cap.append(el("span", "fig-num", "Fig. 3. "), document.createTextNode("Footage of the author being funny."));
     fig.append(cap);
     list.append(fig);
     return;
@@ -102,11 +102,50 @@ function renderClips(clips) {
     frame.append(iframe);
 
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", `Fig. ${i + 2}. `), document.createTextNode(clip.title || ""));
+    cap.append(el("span", "fig-num", `Fig. ${i + 3}. `), document.createTextNode(clip.title || ""));
 
     fig.append(frame, cap);
     list.append(fig);
   });
+}
+
+function renderWriting(pieces, byline) {
+  const list = document.getElementById("writing-list");
+  list.innerHTML = "";
+
+  const sorted = [...pieces].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+  for (const piece of sorted) {
+    // APA-ish: Son, J. Y. (2026, February 11). Title. Outlet.
+    const li = el("li");
+    let when = "n.d.";
+    if (piece.date) {
+      const [y, m, d] = piece.date.split("-").map(Number);
+      when = m && d
+        ? `${y}, ${new Date(y, m - 1, d).toLocaleString("en-US", { month: "long" })} ${d}`
+        : String(y);
+    }
+    if (byline) li.append(document.createTextNode(`${byline} `));
+    li.append(document.createTextNode(`(${when}). `));
+
+    const title = el(piece.link ? "a" : "span", "ref-title", piece.title);
+    if (piece.link) {
+      title.href = piece.link;
+      title.target = "_blank";
+      title.rel = "noopener";
+    }
+    li.append(title, document.createTextNode(". "));
+    if (piece.outlet) li.append(el("span", "ref-outlet", `${piece.outlet}.`));
+    list.append(li);
+  }
+
+  if (sorted.length === 0) list.append(el("li", "empty", "Manuscripts under review."));
+}
+
+function showPhotoPlaceholder(list) {
+  const fig = el("figure", "photo");
+  fig.append(el("div", "photo-placeholder", "Photos forthcoming"));
+  list.append(fig);
 }
 
 function renderPhotos(photos) {
@@ -114,9 +153,7 @@ function renderPhotos(photos) {
   list.innerHTML = "";
 
   if (photos.length === 0) {
-    const fig = el("figure", "photo");
-    fig.append(el("div", "photo-placeholder", "Photos forthcoming"));
-    list.append(fig);
+    showPhotoPlaceholder(list);
     return;
   }
 
@@ -133,11 +170,17 @@ function renderPhotos(photos) {
     img.src = src;
     img.alt = photo.caption || "Dr. Ji performing";
     img.loading = "lazy";
-    img.onerror = () => fig.remove(); // hide photos whose file is missing
+    // optional "focus" picks which part stays visible when cropped, e.g. "center 30%" or "top"
+    if (photo.focus) img.style.objectPosition = photo.focus;
+    // hide photos whose file is missing (and show the placeholder if none are left)
+    img.onerror = () => {
+      fig.remove();
+      if (!list.children.length) showPhotoPlaceholder(list);
+    };
     link.append(img);
 
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", `Plate ${i + 2}. `), document.createTextNode(photo.caption || ""));
+    cap.append(el("span", "fig-num", `Plate ${i + 1}. `), document.createTextNode(photo.caption || ""));
 
     fig.append(link, cap);
     list.append(fig);
@@ -150,6 +193,7 @@ fetch("content.json", { cache: "no-cache" })
   .then((r) => r.json())
   .then((data) => {
     renderShows(data.shows || []);
+    renderWriting(data.writing || [], data.byline);
     renderClips(data.clips || []);
     renderPhotos(data.photos || []);
   })

@@ -1,5 +1,22 @@
 {
+  "byline": "Son, J. Y.",
+
   "shows": [],
+
+  "writing": [
+    {
+      "title": "The Next Innovation in Higher Education: Vibe-Teaching™",
+      "outlet": "McSweeney’s Internet Tendency",
+      "date": "2026-02-11",
+      "link": "https://www.mcsweeneys.net/articles/the-next-innovation-in-higher-education-vibe-teaching"
+    }
+  ],
+
   "clips": [],
-  "photos": []
+
+  "photos": [
+    { "file": "stanford-hai.jpg", "caption": "Stanford HAI." },
+    { "file": "sxsw-edu.jpg", "caption": "SXSW EDU, on the red carpet.", "focus": "center 38%" },
+    { "file": "nctm.jpg", "caption": "NCTM: “What the heck do we know?”" }
+  ]
 }

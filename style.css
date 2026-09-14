@@ -1,13 +1,14 @@
 :root {
-  /* Stage-light palette: deep purple room, teal + violet lights */
-  --bg: #1a1230;
-  --surface: #251a45;
-  --text: #f4effc;
-  --text-soft: #b8acd6;
-  --rule: #3b2e66;
-  --teal: #3ddbc9;
-  --violet: #b075ff;
-  --mark: #6a36c9;
+  /* Palette pulled from the Astronaut City photo:
+     blue-lit brick, neon magenta sign, teal dress */
+  --bg: #0d0e2e;
+  --surface: #171a4d;
+  --text: #f2f1ff;
+  --text-soft: #a9acdb;
+  --rule: #282c6e;
+  --teal: #2fd4c4;
+  --neon: #ef5bff;
+  --brick: #3942d8;
 
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --display: "Archivo Black", "Arial Black", Impact, sans-serif;
@@ -34,7 +35,7 @@ body {
 a { color: inherit; }
 
 mark {
-  background: linear-gradient(transparent 12%, var(--mark) 12%, var(--mark) 88%, transparent 88%);
+  background: linear-gradient(transparent 12%, var(--brick) 12%, var(--brick) 88%, transparent 88%);
   color: inherit;
   padding: 0 0.15em;
   -webkit-box-decoration-break: clone;
@@ -127,6 +128,11 @@ h1 {
   line-height: 0.9;
   letter-spacing: -0.02em;
   margin: 0 0 1.25rem;
+  color: #fff4ff;
+  text-shadow:
+    0 0 6px rgba(239, 91, 255, 0.7),
+    0 0 22px rgba(239, 91, 255, 0.45),
+    0 0 48px rgba(239, 91, 255, 0.25);
 }
 
 .tagline {
@@ -156,12 +162,12 @@ h1 {
   padding: 0.8rem 1.2rem;
   border: 2px solid var(--text);
   background: var(--bg);
-  box-shadow: 4px 4px 0 var(--violet);
+  box-shadow: 4px 4px 0 var(--neon);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--violet); }
-.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--violet); }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--neon); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--neon); }
 
 .btn-primary { background: var(--teal); border-color: var(--teal); color: var(--bg); }
 .btn-big { font-size: 1rem; padding: 1rem 1.6rem; }
@@ -176,7 +182,7 @@ h1 {
   font-weight: 500;
   fill: var(--teal);
 }
-.venn-label-violet { fill: var(--violet); }
+.venn-label-neon { fill: var(--neon); }
 
 .venn-me {
   font-family: var(--display);
@@ -193,27 +199,28 @@ figcaption, .fig-caption {
 
 .fig-num { font-weight: 600; color: var(--text); }
 
-/* ---------- Abstract ---------- */
-.abstract-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 17rem) minmax(0, 44rem);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: start;
-}
-
-.headshot { margin: 0; }
-.headshot img {
+/* ---------- Hero photo ---------- */
+.hero-photo { margin: 0; }
+.hero-photo img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 2px solid var(--text);
-  box-shadow: 6px 6px 0 var(--violet);
+  box-shadow: 8px 8px 0 var(--neon), 0 0 60px rgba(57, 66, 216, 0.55);
 }
-.headshot .photo-placeholder { display: none; aspect-ratio: 4 / 5; }
-.headshot.missing .photo-placeholder { display: grid; }
-.headshot figcaption { text-align: left; margin-top: 0.85rem; }
+.hero-photo .photo-placeholder { display: none; aspect-ratio: 1 / 1; }
+.hero-photo.missing .photo-placeholder { display: grid; }
+.hero-photo figcaption { text-align: left; margin-top: 0.85rem; }
+
+/* ---------- Abstract ---------- */
+.abstract-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 40rem) minmax(0, 20rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
 
 .abstract {
   padding: clamp(1.25rem, 3vw, 2rem);
@@ -264,7 +271,7 @@ figcaption, .fig-caption {
 .show-meta { margin: 0.15rem 0 0; color: var(--text-soft); font-size: 0.95rem; }
 .show-note { margin: 0.25rem 0 0; font-style: italic; font-size: 0.95rem; }
 
-.show .btn { font-size: 0.8rem; padding: 0.55rem 0.9rem; box-shadow: 3px 3px 0 var(--violet); }
+.show .btn { font-size: 0.8rem; padding: 0.55rem 0.9rem; box-shadow: 3px 3px 0 var(--neon); }
 
 .empty {
   padding: 1.5rem 0;
@@ -272,6 +279,31 @@ figcaption, .fig-caption {
   font-style: italic;
   margin: 0;
 }
+
+/* ---------- Publications ---------- */
+.section-note {
+  margin: -1rem 0 1.75rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.references {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 46rem;
+}
+
+.references li {
+  padding-left: 2.5em;
+  text-indent: -2.5em; /* hanging indent, like a real reference list */
+  margin-bottom: 1.1rem;
+  line-height: 1.5;
+}
+
+.references .ref-title { font-style: italic; text-underline-offset: 0.2em; text-decoration-color: var(--teal); }
+.references a.ref-title:hover { color: var(--teal); }
+.references .ref-outlet { color: var(--text-soft); }
 
 /* ---------- Clips ---------- */
 .clip-list {
@@ -287,8 +319,8 @@ figcaption, .fig-caption {
   aspect-ratio: 16 / 9;
   max-width: 100%;
   border: 2px solid var(--text);
-  background: var(--text);
-  box-shadow: 6px 6px 0 var(--violet);
+  background: #000;
+  box-shadow: 6px 6px 0 var(--neon);
 }
 .clip-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
@@ -306,11 +338,12 @@ figcaption, .fig-caption {
 }
 
 .clip figcaption { text-align: left; margin-top: 0.85rem; }
+.clip:only-child:has(.clip-placeholder) { max-width: 26rem; }
 
 /* ---------- Photos ---------- */
 .photo-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
   gap: 1.5rem;
 }
 
@@ -324,7 +357,7 @@ figcaption, .fig-caption {
   background: var(--surface);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.photo a:hover img { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--violet); }
+.photo a:hover img { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--neon); }
 .photo .photo-placeholder { aspect-ratio: 4 / 3; }
 .photo figcaption { text-align: left; margin-top: 0.6rem; }
 
@@ -359,12 +392,13 @@ figcaption, .fig-caption {
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; }
   .abstract-wrap { grid-template-columns: 1fr; }
-  .headshot { max-width: 17rem; }
-  .venn { max-width: 24rem; margin: 0 auto; width: 100%; }
+  .hero-photo { max-width: 30rem; }
+  .venn { max-width: 22rem; margin: 0 auto; width: 100%; }
 }
 
 @media (max-width: 560px) {
   .masthead nav a[href="#abstract"],
+  .masthead nav a[href="#clips"],
   .masthead nav a[href="#photos"] { display: none; }
   .show { grid-template-columns: 4.5rem 1fr; }
   .show .btn { grid-column: 2; justify-self: start; }

@@ -52,17 +52,34 @@ All images go in the `images/` folder. Use lowercase names with hyphens and no s
 
 | File | Where it shows up | Shape / size |
 | --- | --- | --- |
-| `headshot.jpg` | Next to the bio | Portrait, 4:5 (e.g. 1200×1500) |
+| `hero.jpg` | Big photo at the top | Square, 1200×1200 |
 | `share.jpg` | Preview image when the link is texted or posted | Landscape, exactly 1200×630 |
-| `onstage-01.jpg`, `onstage-02.jpg`, … | Photo gallery | Landscape works best (cropped to 4:3) |
+| `stanford-hai.jpg`, `nctm.jpg`, … | Photo gallery ("Plates") | Any; cropped to 4:3 |
 
-The headshot and share image appear automatically once the files exist. Gallery photos also need to be listed in `content.json`:
+`hero.jpg` and `share.jpg` are used automatically. Gallery photos also need to be listed in `content.json`:
 
 ```json
 "photos": [
-  { "file": "onstage-01.jpg", "caption": "Explaining number sense to a bar crowd" }
+  { "file": "sxsw-edu.jpg", "caption": "SXSW EDU, on the red carpet.", "focus": "center 38%" }
 ]
 ```
+
+`focus` is optional. It controls which part of a tall or wide photo stays visible when cropped (`"top"`, `"center 30%"`, `"left"`, and so on).
+
+## Adding humor writing
+
+```json
+"writing": [
+  {
+    "title": "The Next Innovation in Higher Education: Vibe-Teaching™",
+    "outlet": "McSweeney’s Internet Tendency",
+    "date": "2026-02-11",
+    "link": "https://www.mcsweeneys.net/articles/..."
+  }
+]
+```
+
+Pieces are sorted newest first and formatted like a reference list. `"byline"` at the top of `content.json` sets the author name shown on every entry.
 
 Keep each photo under about 500 KB. On a Mac: open it in Preview → Tools → Adjust Size → width 1600 → File → Export as JPEG, quality around 70%.
 
@@ -78,5 +95,5 @@ Then open http://localhost:8000.
 
 - [ ] Replace the booking email in `index.html` (search for `TODO`)
 - [ ] Replace the social media handles
-- [ ] Add `images/headshot.jpg` and `images/share.jpg`
+- [ ] Add `images/nctm.jpg` (already listed in `content.json`)
 - [ ] (Optional) Buy a domain and add it under Settings → Pages → Custom domain
