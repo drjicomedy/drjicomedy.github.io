@@ -1,4 +1,4 @@
-// Renders shows and clips from shows.json.
+// Renders shows, clips, and photos from content.json.
 // Shows whose date has passed are hidden automatically, so you never have to delete old ones.
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -131,7 +131,7 @@ function renderPhotos(photos) {
     link.rel = "noopener";
     const img = document.createElement("img");
     img.src = src;
-    img.alt = photo.caption || "Ji Son performing";
+    img.alt = photo.caption || "Dr. Ji performing";
     img.loading = "lazy";
     img.onerror = () => fig.remove(); // hide photos whose file is missing
     link.append(img);

@@ -1,4 +1,4 @@
-# Ji Son · Comedy
+# Dr. Ji · Comedy
 
 Stand-up where you accidentally learn something. A plain HTML/CSS site hosted on GitHub Pages, with no build step.
 
