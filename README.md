@@ -2,6 +2,10 @@
 
 Stand-up where you accidentally learn something. A plain HTML/CSS site hosted on GitHub Pages, with no build step.
 
+**Live site:** https://drjicomedy.github.io
+
+Changes pushed to `main` go live in about a minute.
+
 ## Files
 
 | File | What it is |
@@ -44,16 +48,23 @@ Paste any YouTube link (a regular video, youtu.be, or Shorts):
 
 ## Photos
 
-- **Headshot:** save it as `images/headshot.jpg` (a portrait around 4:5 works best).
-- **Gallery:** add image files to `images/` and list them:
+All images go in the `images/` folder. Use lowercase names with hyphens and no spaces.
+
+| File | Where it shows up | Shape / size |
+| --- | --- | --- |
+| `headshot.jpg` | Next to the bio | Portrait, 4:5 (e.g. 1200×1500) |
+| `share.jpg` | Preview image when the link is texted or posted | Landscape, exactly 1200×630 |
+| `onstage-01.jpg`, `onstage-02.jpg`, … | Photo gallery | Landscape works best (cropped to 4:3) |
+
+The headshot and share image appear automatically once the files exist. Gallery photos also need to be listed in `content.json`:
 
 ```json
 "photos": [
-  { "file": "onstage-1.jpg", "caption": "Explaining number sense to a bar crowd" }
+  { "file": "onstage-01.jpg", "caption": "Explaining number sense to a bar crowd" }
 ]
 ```
 
-Resize photos to about 1600px wide before uploading so the site stays fast.
+Keep each photo under about 500 KB. On a Mac: open it in Preview → Tools → Adjust Size → width 1600 → File → Export as JPEG, quality around 70%.
 
 ## Preview locally
 
@@ -67,5 +78,5 @@ Then open http://localhost:8000.
 
 - [ ] Replace the booking email in `index.html` (search for `TODO`)
 - [ ] Replace the social media handles
-- [ ] Add `images/headshot.jpg`
+- [ ] Add `images/headshot.jpg` and `images/share.jpg`
 - [ ] (Optional) Buy a domain and add it under Settings → Pages → Custom domain
