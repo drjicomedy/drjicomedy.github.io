@@ -54,7 +54,7 @@ All images go in the `images/` folder. Use lowercase names with hyphens and no s
 | --- | --- | --- |
 | `headshot.jpg` | Next to the bio | Square, 1200×1200 |
 | `share.jpg` | Preview image when the link is texted or posted | Landscape, exactly 1200×630 |
-| `stanford-hai.jpg`, `nctm.jpg`, … | Photo gallery ("Plates") | Any; cropped to 4:3 |
+| `stanford-hai.jpg`, `nctm.jpg`, … | "Supplementary Figures" section | Any; cropped to 4:3 |
 
 `headshot.jpg` and `share.jpg` are used automatically. Gallery photos also need to be listed in `content.json`:
 
@@ -65,6 +65,10 @@ All images go in the `images/` folder. Use lowercase names with hyphens and no s
 ```
 
 `focus` is optional. It controls which part of a tall or wide photo stays visible when cropped (`"top"`, `"center 30%"`, `"left"`, and so on).
+
+Keep each photo under about 500 KB. On a Mac: open it in Preview → Tools → Adjust Size → width 1600 → File → Export as JPEG, quality around 70%.
+
+Clips (above) and photos share the "Supplementary Figures" section: clips appear first, then photos. To swap a photo for a clip, delete its line from `"photos"` and add the clip to `"clips"`. Figure numbers update themselves.
 
 ## Adding humor writing
 
@@ -81,8 +85,6 @@ All images go in the `images/` folder. Use lowercase names with hyphens and no s
 
 Pieces appear in the same order as in the file, formatted like a reference list. `"byline"` at the top of `content.json` sets the author name shown on every entry.
 
-Keep each photo under about 500 KB. On a Mac: open it in Preview → Tools → Adjust Size → width 1600 → File → Export as JPEG, quality around 70%.
-
 ## Preview locally
 
 ```bash
@@ -95,5 +97,4 @@ Then open http://localhost:8000.
 
 - [ ] Replace the booking email in `index.html` (search for `TODO`)
 - [ ] Replace the social media handles
-- [ ] Add `images/nctm.jpg` (already listed in `content.json`)
 - [ ] (Optional) Buy a domain and add it under Settings → Pages → Custom domain

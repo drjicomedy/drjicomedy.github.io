@@ -77,16 +77,6 @@ function renderClips(clips) {
   const list = document.getElementById("clip-list");
   list.innerHTML = "";
 
-  if (clips.length === 0) {
-    const fig = el("figure", "clip");
-    fig.append(el("div", "clip-placeholder", "Clip forthcoming (pending peer review)"));
-    const cap = el("figcaption");
-    cap.append(el("span", "fig-num"), document.createTextNode("Footage of the author being funny."));
-    fig.append(cap);
-    list.append(fig);
-    return;
-  }
-
   clips.forEach((clip) => {
     const id = youtubeId(clip.youtube || "");
     if (!id) return;
@@ -133,7 +123,8 @@ function renderWriting(pieces, byline) {
       title.target = "_blank";
       title.rel = "noopener";
     }
-    li.append(title, document.createTextNode(". "));
+    // don't double up punctuation when a title already ends in . ? or !
+    li.append(title, document.createTextNode(/[.?!]$/.test(piece.title) ? " " : ". "));
     if (piece.outlet) li.append(el("span", "ref-outlet", `${piece.outlet}.`));
     list.append(li);
   }

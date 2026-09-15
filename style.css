@@ -99,7 +99,6 @@ main {
 
 .section {
   padding-block: clamp(3rem, 7vw, 5rem);
-  border-top: 2px dashed var(--violet);
 }
 
 h2 {
@@ -349,7 +348,7 @@ figcaption, .fig-caption {
 }
 
 .clip figcaption { text-align: left; margin-top: 0.85rem; }
-.clip:only-child:has(.clip-placeholder) { max-width: 26rem; }
+.clip-list:not(:empty) { margin-bottom: 2rem; }
 
 /* ---------- Photos ---------- */
 .photo-list {
@@ -411,8 +410,7 @@ figcaption, .fig-caption {
   .masthead-name { font-size: 1.05rem; }
   .masthead nav { font-size: 0.8rem; gap: 0.75rem; letter-spacing: 0.04em; }
   .masthead nav a[href="#abstract"],
-  .masthead nav a[href="#clips"],
-  .masthead nav a[href="#photos"] { display: none; }
+  .masthead nav a[href="#writing"] { display: none; }
   .show { grid-template-columns: 4.5rem 1fr; }
   .show .btn { grid-column: 2; justify-self: start; }
 }
