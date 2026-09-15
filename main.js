@@ -100,37 +100,42 @@ function renderClips(clips) {
   });
 }
 
-function renderWriting(pieces, byline) {
+function renderWriting(pieces) {
   const list = document.getElementById("writing-list");
   list.innerHTML = "";
 
   // listed in the same order as content.json
   for (const piece of pieces) {
-    // APA-ish: Son, J. Y. (2026, February 11). Title. Outlet.
-    const li = el("li");
-    let when = "n.d.";
-    if (piece.date) {
-      const [y, m, d] = piece.date.split("-").map(Number);
-      when = m && d
-        ? `${y}, ${new Date(y, m - 1, d).toLocaleString("en-US", { month: "long" })} ${d}`
-        : String(y);
-    }
-    if (byline) li.append(document.createTextNode(`${byline} `));
-    li.append(document.createTextNode(`(${when}). `));
-
-    const title = el(piece.link ? "a" : "span", "ref-title", piece.title);
+    const card = el(piece.link ? "a" : "div", "pub-card");
     if (piece.link) {
-      title.href = piece.link;
-      title.target = "_blank";
-      title.rel = "noopener";
+      card.href = piece.link;
+      card.target = "_blank";
+      card.rel = "noopener";
     }
-    // don't double up punctuation when a title already ends in . ? or !
-    li.append(title, document.createTextNode(/[.?!]$/.test(piece.title) ? " " : ". "));
-    if (piece.outlet) li.append(el("span", "ref-outlet", `${piece.outlet}.`));
-    list.append(li);
+
+    const thumb = el("div", "pub-thumb");
+    if (piece.image) {
+      const img = document.createElement("img");
+      img.src = piece.image;
+      img.alt = "";
+      img.loading = "lazy";
+      img.onerror = () => img.remove(); // falls back to the plain colored thumbnail
+      thumb.append(img);
+    }
+
+    const year = piece.date ? piece.date.slice(0, 4) : "";
+    const body = el("div", "pub-body");
+    body.append(
+      el("p", "pub-meta", [piece.outlet, year].filter(Boolean).join(" · ")),
+      el("h3", "pub-title", piece.title)
+    );
+    if (piece.blurb) body.append(el("p", "pub-blurb", piece.blurb));
+
+    card.append(thumb, body);
+    list.append(card);
   }
 
-  if (pieces.length === 0) list.append(el("li", "empty", "Manuscripts under review."));
+  if (pieces.length === 0) list.append(el("p", "empty", "Manuscripts under review."));
 }
 
 // Numbers every figure caption on the page in order: Figure 1, Figure 2, ...
@@ -192,12 +197,12 @@ fetch("content.json", { cache: "no-cache" })
   .then((r) => r.json())
   .then((data) => {
     renderShows(data.shows || []);
-    renderWriting(data.writing || [], data.byline);
+    renderWriting(data.writing || []);
     renderClips(data.clips || []);
     renderPhotos(data.photos || []);
     renumberFigures();
   })
   .catch(() => {
     document.getElementById("writing-list").innerHTML =
-      '<li class="empty">Couldn’t load content.json. Check that it is valid JSON.</li>';
+      '<p class="empty">Couldn’t load content.json. Check that it is valid JSON.</p>';
   });

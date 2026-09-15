@@ -1,52 +1,70 @@
 {
   "byline": "Son, J. Y.",
-
   "shows": [],
-
   "writing": [
     {
       "title": "The Next Innovation in Higher Education: Vibe-Teaching™",
       "outlet": "McSweeney’s Internet Tendency",
       "date": "2026-02-11",
-      "link": "https://www.mcsweeneys.net/articles/the-next-innovation-in-higher-education-vibe-teaching"
+      "link": "https://www.mcsweeneys.net/articles/the-next-innovation-in-higher-education-vibe-teaching",
+      "blurb": "From the associate vice provost for the Office of Asynchronous Online Courses for Student-Centered High-Impact Learning.",
+      "image": "https://tendency-prod.nyc3.cdn.digitaloceanspaces.com/3e3fam7qr0mc4yq94xuhcl840yc6"
     },
     {
       "title": "How I Conned Scammers into Promoting My Romance Novel",
       "outlet": "Human Parts",
       "date": "2025-10-28",
-      "link": "https://medium.com/human-parts/how-i-conned-scammers-into-promoting-my-romance-novel-32921f961ca9"
+      "link": "https://medium.com/human-parts/how-i-conned-scammers-into-promoting-my-romance-novel-32921f961ca9",
+      "blurb": "Love in the age of pig-butchering.",
+      "image": "https://miro.medium.com/v2/da:true/resize:fit:1200/0*cUorngG-qrmCNv6J"
     },
     {
       "title": "Memo from the CFO of Squid Games: We’re in Danger of Going into Debt",
       "outlet": "The Belladonna Comedy",
       "date": "2025-11-28",
-      "link": "https://medium.com/thebelladonnacomedy/memo-from-the-cfo-of-squid-games-were-in-danger-of-going-into-debt-7b1c0f695a84"
+      "link": "https://medium.com/thebelladonnacomedy/memo-from-the-cfo-of-squid-games-were-in-danger-of-going-into-debt-7b1c0f695a84",
+      "blurb": "Figures have been converted from South Korean won to US dollars during translation.",
+      "image": "https://miro.medium.com/v2/da:true/resize:fit:1200/0*CCyl94rqk0tVkW5s"
     },
     {
       "title": "Unregulated Capitalism Defends Love Scams Against Critics",
       "outlet": "Jane Austen’s Wastebasket",
       "date": "2026-02-21",
-      "link": "https://medium.com/jane-austens-wastebasket/unregulated-capitalism-defends-love-scams-against-critics-d6db346a40d9"
+      "link": "https://medium.com/jane-austens-wastebasket/unregulated-capitalism-defends-love-scams-against-critics-d6db346a40d9",
+      "blurb": "An open letter from Capitalism to journalists covering “pig butchering scams.”",
+      "image": "https://miro.medium.com/v2/resize:fit:1200/1*mMDoj-US2nilMz1s8YUL9Q.jpeg"
     },
     {
       "title": "To Solve Homelessness, California Only Funds Housing Where You Can Get High. Really.",
       "outlet": "Medium",
       "date": "2026-06-19",
-      "link": "https://medium.com/@jiyunson/to-solve-homelessness-california-only-funds-housing-where-you-can-get-high-really-62ec7b76f44a"
+      "link": "https://medium.com/@jiyunson/to-solve-homelessness-california-only-funds-housing-where-you-can-get-high-really-62ec7b76f44a",
+      "blurb": "A thank-you letter to Governor Newsom from the neighborhood drug dealer.",
+      "image": "https://miro.medium.com/v2/resize:fit:1200/1*gNbloAK2wbJA8WJu2kt-Hw.jpeg"
     },
     {
       "title": "Why Are We So Obsessed with Fixing Things?",
       "outlet": "Medium",
       "date": "2026-06-19",
-      "link": "https://medium.com/@jiyunson/why-are-we-so-obsessed-with-fixing-things-3eae676eb07b"
+      "link": "https://medium.com/@jiyunson/why-are-we-so-obsessed-with-fixing-things-3eae676eb07b",
+      "blurb": "AB 1903 threatens California’s Slow Fix Movement.",
+      "image": "https://miro.medium.com/v2/da:true/resize:fit:1200/0*ZbGxDlBtRDK4axBe"
     }
   ],
-
   "clips": [],
-
   "photos": [
-    { "file": "stanford-hai.jpg", "caption": "Stanford HAI." },
-    { "file": "sxsw-edu.jpg", "caption": "SXSW EDU, on the red carpet.", "focus": "center 38%" },
-    { "file": "nctm.jpg", "caption": "NCTM: “What the heck do we know?”" }
+    {
+      "file": "stanford-hai.jpg",
+      "caption": "Stanford HAI."
+    },
+    {
+      "file": "sxsw-edu.jpg",
+      "caption": "SXSW EDU, on the red carpet.",
+      "focus": "center 38%"
+    },
+    {
+      "file": "nctm.jpg",
+      "caption": "NCTM: “What the heck do we know?”"
+    }
   ]
 }
