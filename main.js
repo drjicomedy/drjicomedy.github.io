@@ -81,13 +81,13 @@ function renderClips(clips) {
     const fig = el("figure", "clip");
     fig.append(el("div", "clip-placeholder", "Clip forthcoming (pending peer review)"));
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", "Fig. 2. "), document.createTextNode("Footage of the author being funny."));
+    cap.append(el("span", "fig-num"), document.createTextNode("Footage of the author being funny."));
     fig.append(cap);
     list.append(fig);
     return;
   }
 
-  clips.forEach((clip, i) => {
+  clips.forEach((clip) => {
     const id = youtubeId(clip.youtube || "");
     if (!id) return;
 
@@ -102,7 +102,7 @@ function renderClips(clips) {
     frame.append(iframe);
 
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", `Fig. ${i + 2}. `), document.createTextNode(clip.title || ""));
+    cap.append(el("span", "fig-num"), document.createTextNode(clip.title || ""));
 
     fig.append(frame, cap);
     list.append(fig);
@@ -113,9 +113,8 @@ function renderWriting(pieces, byline) {
   const list = document.getElementById("writing-list");
   list.innerHTML = "";
 
-  const sorted = [...pieces].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-
-  for (const piece of sorted) {
+  // listed in the same order as content.json
+  for (const piece of pieces) {
     // APA-ish: Son, J. Y. (2026, February 11). Title. Outlet.
     const li = el("li");
     let when = "n.d.";
@@ -139,7 +138,14 @@ function renderWriting(pieces, byline) {
     list.append(li);
   }
 
-  if (sorted.length === 0) list.append(el("li", "empty", "Manuscripts under review."));
+  if (pieces.length === 0) list.append(el("li", "empty", "Manuscripts under review."));
+}
+
+// Numbers every figure caption on the page in order: Figure 1, Figure 2, ...
+function renumberFigures() {
+  document.querySelectorAll(".fig-num").forEach((span, i) => {
+    span.textContent = `Figure ${i + 1}. `;
+  });
 }
 
 function showPhotoPlaceholder(list) {
@@ -157,7 +163,7 @@ function renderPhotos(photos) {
     return;
   }
 
-  photos.forEach((photo, i) => {
+  photos.forEach((photo) => {
     if (!photo.file) return;
     const src = photo.file.includes("/") ? photo.file : `images/${photo.file}`;
 
@@ -176,11 +182,12 @@ function renderPhotos(photos) {
     img.onerror = () => {
       fig.remove();
       if (!list.children.length) showPhotoPlaceholder(list);
+      renumberFigures();
     };
     link.append(img);
 
     const cap = el("figcaption");
-    cap.append(el("span", "fig-num", `Plate ${i + 2}. `), document.createTextNode(photo.caption || ""));
+    cap.append(el("span", "fig-num"), document.createTextNode(photo.caption || ""));
 
     fig.append(link, cap);
     list.append(fig);
@@ -196,6 +203,7 @@ fetch("content.json", { cache: "no-cache" })
     renderWriting(data.writing || [], data.byline);
     renderClips(data.clips || []);
     renderPhotos(data.photos || []);
+    renumberFigures();
   })
   .catch(() => {
     document.getElementById("show-list").innerHTML =

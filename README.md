@@ -1,4 +1,4 @@
-# Dr. Ji · Comedy
+# Comedy by Dr. Ji
 
 Stand-up where you accidentally learn something. A plain HTML/CSS site hosted on GitHub Pages, with no build step.
 
@@ -79,7 +79,7 @@ All images go in the `images/` folder. Use lowercase names with hyphens and no s
 ]
 ```
 
-Pieces are sorted newest first and formatted like a reference list. `"byline"` at the top of `content.json` sets the author name shown on every entry.
+Pieces appear in the same order as in the file, formatted like a reference list. `"byline"` at the top of `content.json` sets the author name shown on every entry.
 
 Keep each photo under about 500 KB. On a Mac: open it in Preview → Tools → Adjust Size → width 1600 → File → Export as JPEG, quality around 70%.
 
