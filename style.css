@@ -16,7 +16,6 @@
 
   /* Instead of plain lines: rows of alternating teal/violet squares */
   --squares-x: repeating-linear-gradient(90deg, var(--teal) 0 6px, transparent 6px 12px, var(--violet) 12px 18px, transparent 18px 24px);
-  --squares-y: repeating-linear-gradient(180deg, var(--teal) 0 6px, transparent 6px 12px, var(--violet) 12px 18px, transparent 18px 24px);
 
   --max: 64rem;
   --gutter: clamp(1rem, 4vw, 2.5rem);
@@ -231,11 +230,7 @@ figcaption, .fig-caption {
 .headshot.missing .photo-placeholder { display: grid; }
 .headshot figcaption { text-align: left; margin-top: 0.85rem; }
 
-.abstract {
-  padding: clamp(1.25rem, 3vw, 2rem);
-  padding-left: calc(clamp(1.25rem, 3vw, 2rem) + 6px);
-  background: var(--squares-y) left top / 6px 100% no-repeat, var(--surface);
-}
+.abstract { padding: 0; }
 
 .abstract p { margin: 0 0 1rem; }
 .abstract p:first-child { font-size: 1.12em; }
@@ -256,6 +251,8 @@ figcaption, .fig-caption {
   margin-bottom: 0 !important;
 }
 .keywords strong { color: var(--text); font-style: italic; }
+.keywords a { color: var(--teal); text-underline-offset: 0.25em; text-decoration-style: dashed; }
+.keywords a:hover { color: var(--text); }
 
 /* ---------- Shows ---------- */
 .show-list { border-top: 2px dashed var(--text-soft); }
