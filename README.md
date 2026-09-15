@@ -97,6 +97,5 @@ Then open http://localhost:8000.
 
 ## Still to do
 
-- [ ] Replace the booking email in `index.html` (search for `TODO`)
 - [ ] Add YouTube link once the comedy channel exists (commented out in `index.html`)
 - [ ] (Optional) Buy a domain and add it under Settings → Pages → Custom domain
