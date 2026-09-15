@@ -37,6 +37,14 @@ body {
 
 a { color: inherit; }
 
+/* text links: teal with a standard underline */
+.keywords a, .references a, .socials a, .empty a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.keywords a:hover, .references a:hover, .socials a:hover, .empty a:hover { color: var(--text); }
+
 mark {
   background: linear-gradient(transparent 12%, var(--mark) 12%, var(--mark) 88%, transparent 88%);
   color: inherit;
@@ -251,8 +259,6 @@ figcaption, .fig-caption {
   margin-bottom: 0 !important;
 }
 .keywords strong { color: var(--text); font-style: italic; }
-.keywords a { color: var(--teal); text-underline-offset: 0.25em; text-decoration-style: dashed; }
-.keywords a:hover { color: var(--text); }
 
 /* ---------- Shows ---------- */
 .show-list { border-top: 2px dashed var(--text-soft); }
@@ -308,8 +314,7 @@ figcaption, .fig-caption {
   line-height: 1.5;
 }
 
-.references .ref-title { font-style: italic; text-underline-offset: 0.25em; text-decoration-style: dashed; text-decoration-color: var(--teal); }
-.references a.ref-title:hover { color: var(--teal); }
+.references .ref-title { font-style: italic; }
 .references .ref-outlet { color: var(--text-soft); }
 
 /* ---------- Clips ---------- */
@@ -381,8 +386,6 @@ figcaption, .fig-caption {
   font-family: var(--mono);
   font-size: 0.9rem;
 }
-.socials a { text-underline-offset: 0.25em; text-decoration-style: dashed; text-decoration-color: var(--violet); }
-.socials a:hover { color: var(--teal); }
 
 /* ---------- Footer ---------- */
 .footer {
