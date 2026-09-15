@@ -19,6 +19,7 @@ function parseDate(str) {
 
 function renderShows(shows) {
   const list = document.getElementById("show-list");
+  if (!list) return; // shows section is hidden
   list.innerHTML = "";
 
   const today = new Date();
@@ -197,6 +198,6 @@ fetch("content.json", { cache: "no-cache" })
     renumberFigures();
   })
   .catch(() => {
-    document.getElementById("show-list").innerHTML =
-      '<p class="empty">Couldn’t load shows. Check that content.json is valid JSON.</p>';
+    document.getElementById("writing-list").innerHTML =
+      '<li class="empty">Couldn’t load content.json. Check that it is valid JSON.</li>';
   });

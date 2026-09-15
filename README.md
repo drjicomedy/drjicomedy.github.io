@@ -17,6 +17,8 @@ Changes pushed to `main` go live in about a minute.
 
 ## Adding a show
 
+> **The Shows section is currently hidden.** To bring it back, open `index.html`, delete the comment wrapper around the Shows section (search for `SHOWS (hidden for now)`), and un-comment the "Shows" nav link and the "See upcoming shows" button.
+
 Open `content.json` and add an entry to `"shows"`. You can do this from your phone: open the file on github.com and tap the pencil icon. Past shows hide themselves automatically, so you never need to delete them.
 
 ```json
